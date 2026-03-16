@@ -1,0 +1,19 @@
+.login{
+width:300px;
+margin:auto;
+margin-top:120px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.login input{
+padding:10px;
+}
+
+.login button{
+padding:10px;
+background:#007bff;
+color:white;
+border:none;
+}
