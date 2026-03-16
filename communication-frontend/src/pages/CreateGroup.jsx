@@ -91,7 +91,7 @@ onChange={()=>toggleUser(user._id)}
 <img
 src={
 user.profilePic
-? `http://localhost:5000/uploads/${user.profilePic}`
+? `https://communication-web-application.onrender.com/${user.profilePic}`
 : `https://ui-avatars.com/api/?name=${user.name}`
 }
 className="group-avatar"

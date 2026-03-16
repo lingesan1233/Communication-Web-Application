@@ -62,7 +62,7 @@ return(
 <img
 src={
 user.profilePic
-? `http://localhost:5000/uploads/${user.profilePic}`
+? `https://communication-web-application.onrender.com/${user.profilePic}`
 : "https://i.imgur.com/HeIi0wU.png"
 }
 className="profile-img"

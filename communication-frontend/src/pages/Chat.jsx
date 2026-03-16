@@ -6,7 +6,7 @@ import io from "socket.io-client"
 import Message from "../components/Message"
 import "../styles/Chat.css"
 
-const socket = io("http://localhost:5000")
+const socket = io("https://communication-web-application.onrender.com")
 
 export default function Chat(){
 

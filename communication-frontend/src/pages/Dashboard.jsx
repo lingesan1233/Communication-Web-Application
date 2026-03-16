@@ -198,7 +198,7 @@ onClick={() => openChat(chat)}
 <img
 src={
 otherUser?.profilePic
-? `http://localhost:5000/uploads/${otherUser.profilePic}`
+? `https://communication-web-application.onrender.com/${otherUser.profilePic}`
 : `https://ui-avatars.com/api/?name=${otherUser?.name}`
 }
 className="chat-avatar"
