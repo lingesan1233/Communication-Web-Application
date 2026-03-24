@@ -1,44 +1,63 @@
-.create-group{
-max-width:500px;
-margin:auto;
-padding:20px;
+.page-wrapper {
+  background-color: #f8fafc;
+  min-height: 100vh;
 }
 
-.create-group input{
-width:100%;
-padding:10px;
-margin-bottom:20px;
-border:1px solid #ccc;
-border-radius:5px;
+.create-group-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-.user-list{
-max-height:300px;
-overflow-y:auto;
-border:1px solid #eee;
-padding:10px;
+.create-group-card {
+  background: white;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.user-item{
-display:flex;
-align-items:center;
-margin-bottom:10px;
+.create-group-card h2 { margin: 0 0 5px 0; color: #1e293b; }
+.subtitle { color: #64748b; font-size: 14px; margin-bottom: 25px; }
+
+/* Input Styling */
+.group-input-section { margin-bottom: 20px; text-align: left; }
+.group-input-section label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #475569; }
+.main-input, .search-input {
+  width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 15px; box-sizing: border-box; outline: none; transition: 0.2s;
+}
+.main-input:focus, .search-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+
+/* User List Styling */
+.user-selection-header { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; margin-bottom: 10px; }
+.badge { background: #eff6ff; color: #3b82f6; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+
+.user-scroll-list {
+  max-height: 250px; overflow-y: auto; border: 1px solid #f1f5f9; border-radius: 10px; margin-top: 10px;
 }
 
-.group-avatar{
-width:35px;
-height:35px;
-border-radius:50%;
-margin-right:10px;
-object-fit:cover;
+.user-row {
+  display: flex; justify-content: space-between; align-items: center; padding: 12px; cursor: pointer; transition: 0.2s; border-bottom: 1px solid #f8fafc;
+}
+.user-row:hover { background-color: #f1f5f9; }
+.user-row.selected { background-color: #f0f9ff; }
+
+.user-info { display: flex; align-items: center; gap: 12px; }
+.user-avatar { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+
+/* Custom Checkbox Replacement */
+.custom-checkbox {
+  width: 20px; height: 20px; border: 2px solid #cbd5e1; border-radius: 50%; position: relative; transition: 0.2s;
+}
+.custom-checkbox.checked { background: #3b82f6; border-color: #3b82f6; }
+.custom-checkbox.checked::after {
+  content: "✓"; color: white; font-size: 12px; position: absolute; left: 4px; top: 0px;
 }
 
-.create-group button{
-margin-top:20px;
-padding:10px 20px;
-background:#25d366;
-border:none;
-color:white;
-border-radius:5px;
-cursor:pointer;
+/* Button */
+.create-btn {
+  width: 100%; margin-top: 30px; padding: 14px; background: #3b82f6; color: white; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: 0.2s;
 }
+.create-btn:hover { background: #2563eb; }
+.create-btn:disabled { background: #94a3b8; cursor: not-allowed; }

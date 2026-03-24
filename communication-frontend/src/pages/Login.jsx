@@ -1,60 +1,62 @@
-import {useState} from "react"
-import {useNavigate} from "react-router-dom"
-import API from "../services/api"
-import "../styles/Login.css"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import API from "../services/api";
+import "../styles/Login.css";
 
-export default function Login(){
+export default function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
-const navigate = useNavigate()
+  const login = async () => {
+    setLoading(true);
+    try {
+      const res = await API.post("/auth/login", { email, password });
+      localStorage.setItem("token", res.data.token);
+      navigate("/dashboard");
+    } catch (err) {
+      alert("Invalid email or password. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-const [email,setEmail] = useState("")
-const [password,setPassword] = useState("")
+  return (
+    <div className="login-container">
+      <div className="login-card">
+        <h2>Welcome Back</h2>
+        <p className="subtitle">Please enter your details to sign in.</p>
 
-const login = async()=>{
+        <div className="input-group">
+          <label>Email Address</label>
+          <input
+            type="email"
+            placeholder="name@company.com"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-try{
+        <div className="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="••••••••"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-const res = await API.post("/auth/login",{
-email,
-password
-})
+        <button className="login-button" onClick={login} disabled={loading}>
+          {loading ? "Signing in..." : "Sign In"}
+        </button>
 
-localStorage.setItem("token",res.data.token)
-
-navigate("/dashboard")
-
-}
-catch(err){
-alert("Login failed")
-}
-
-}
-
-return(
-
-<div className="login">
-
-<h2>Login</h2>
-
-<input
-placeholder="Email"
-onChange={(e)=>setEmail(e.target.value)}
-/>
-
-<input
-type="password"
-placeholder="Password"
-onChange={(e)=>setPassword(e.target.value)}
-/>
-
-<button onClick={login}>Login</button>
-
-<p onClick={()=>navigate("/signup")}>
-Create Account
-</p>
-
-</div>
-
-)
-
+        <div className="login-footer">
+          <span>Don't have an account?</span>
+          <button className="link-btn" onClick={() => navigate("/signup")}>
+            Sign up
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }

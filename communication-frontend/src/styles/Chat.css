@@ -1,80 +1,134 @@
-.chat{
-height:100vh;
-display:flex;
-flex-direction:column;
-background:#f0f2f5;
-font-family:Arial, Helvetica, sans-serif;
+.wa-page-bg {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* message area */
-
-.messages{
-flex:1;
-overflow-y:auto;
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
+.wa-create-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
 }
 
-/* message bubble */
-
-.message{
-max-width:60%;
-padding:10px 15px;
-border-radius:10px;
-background:white;
-box-shadow:0px 1px 3px rgba(0,0,0,0.1);
+.wa-create-card {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 3px; /* Slightly square like WA Web */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
 }
 
-/* sent message */
-
-.message.sent{
-align-self:flex-end;
-background:#007bff;
-color:white;
+.wa-create-header {
+  background: #008069; /* WhatsApp Green */
+  color: white;
+  padding: 20px 25px;
 }
 
-/* received message */
+.wa-create-header h2 { margin: 0; font-size: 19px; font-weight: 500; }
+.wa-create-header p { margin: 5px 0 0 0; font-size: 13px; opacity: 0.9; }
 
-.message.received{
-align-self:flex-start;
-background:#e4e6eb;
+.wa-section {
+  padding: 20px 25px 0 25px;
 }
 
-/* send message box */
-
-.send{
-display:flex;
-align-items:center;
-padding:10px;
-background:white;
-border-top:1px solid #ddd;
+.wa-name-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #00a884;
+  padding: 10px 0;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
 }
 
-/* input field */
-
-.send input{
-flex:1;
-padding:12px;
-border:1px solid #ccc;
-border-radius:20px;
-outline:none;
+.wa-list-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #667781;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
-/* send button */
+.wa-count { color: #00a884; font-weight: bold; }
 
-.send button{
-margin-left:10px;
-padding:10px 20px;
-background:#007bff;
-color:white;
-border:none;
-border-radius:20px;
-cursor:pointer;
-transition:0.2s;
+.wa-search-box input {
+  width: 100%;
+  background: #f0f2f5;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
 }
 
-.send button:hover{
-background:#0056b3;
+/* User List */
+.wa-user-list {
+  margin-top: 15px;
+  max-height: 280px;
+  overflow-y: auto;
+  border-top: 1px solid #f0f2f5;
 }
+
+.wa-user-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f2f5;
+  transition: 0.2s;
+}
+
+.wa-user-row:hover { background: #f5f6f6; }
+
+.wa-user-main { display: flex; align-items: center; gap: 15px; }
+
+.wa-row-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.wa-user-name { font-size: 16px; color: #111b21; }
+
+/* Checkmark logic */
+.wa-check-circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.wa-user-row.selected .wa-check-circle {
+  background: #00a884;
+  border-color: #00a884;
+}
+
+/* Create Button */
+.wa-create-btn {
+  margin: 25px;
+  padding: 15px;
+  background: #00a884;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition: 0.2s;
+}
+
+.wa-create-btn:hover { background: #008069; transform: translateY(-1px); }
+.wa-create-btn:disabled { background: #a5d6a7; cursor: not-allowed; }

@@ -1,26 +1,86 @@
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-background:#222;
-color:white;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
+  background: #ffffff; /* Clean white background */
+  color: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
 }
 
-.nav-buttons{
-display:flex;
-gap:10px;
+/* Logo Section */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
-.navbar button{
-padding:8px 15px;
-border:none;
-background:#25d366;
-color:white;
-border-radius:5px;
-cursor:pointer;
+.logo-icon {
+  font-size: 24px;
 }
 
-.navbar button:hover{
-background:#1da851;
+.nav-logo h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #007bff, #00d2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: #555;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #f0f2f5;
+  color: #000;
+}
+
+/* Active State */
+.nav-btn.active {
+  background: #e7f3ff;
+  color: #007bff;
+}
+
+/* Logout Specific Styling */
+.logout-btn {
+  margin-left: 10px;
+  color: #dc3545; /* Red for danger/logout */
+}
+
+.logout-btn:hover {
+  background: #fff5f5;
+  color: #bd2130;
+}
+
+/* Responsive Tweak */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 15px;
+  }
+  .nav-logo h1 {
+    display: none; /* Hide text logo on tiny screens */
+  }
 }

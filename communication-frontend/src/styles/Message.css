@@ -1,6 +1,70 @@
-.message{
-background:#eee;
-padding:8px;
-margin:5px;
-border-radius:5px;
+.wa-message-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2px;
+  padding: 2px 0;
+}
+
+.wa-message-row.me {
+  justify-content: flex-end;
+}
+
+.wa-message-row.them {
+  justify-content: flex-start;
+}
+
+.wa-message-bubble {
+  max-width: 65%;
+  padding: 6px 10px 8px 10px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+}
+
+/* My Message (Light Green) */
+.me .wa-message-bubble {
+  background-color: #d9fdd3;
+  border-top-right-radius: 0; /* Creates the "tail" effect */
+}
+
+/* Other's Message (White) */
+.them .wa-message-bubble {
+  background-color: #ffffff;
+  border-top-left-radius: 0; /* Creates the "tail" effect */
+}
+
+.wa-message-sender {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #35a294; /* WhatsApp contact green */
+  margin-bottom: 2px;
+}
+
+.wa-message-text {
+  margin: 0;
+  font-size: 14.2px;
+  color: #111b21;
+  line-height: 19px;
+}
+
+.wa-message-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  margin-top: -4px; /* Pulls time closer to text */
+}
+
+.wa-message-time {
+  font-size: 11px;
+  color: #667781;
+  text-transform: uppercase;
+}
+
+.wa-message-check {
+  font-size: 14px;
+  color: #53bdeb; /* WhatsApp blue ticks */
+  font-weight: bold;
 }

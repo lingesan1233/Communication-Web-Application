@@ -5,7 +5,7 @@ import io from "socket.io-client"
 import Navbar from "../components/Navbar"
 import "../styles/Dashboard.css"
 
-const socket = io("http://localhost:5000")
+const socket = io("https://communication-web-application.onrender.com")
 
 export default function Dashboard() {
 
@@ -170,7 +170,7 @@ onClick={() => startChat(user._id)}
 <img
 src={
 user.profilePic
-? `http://localhost:5000/uploads/${user.profilePic}`
+? `https://communication-web-application.onrender.com/uploads/${user.profilePic}`
 : `https://ui-avatars.com/api/?name=${user.name}`
 }
 className="chat-avatar"
